@@ -1,0 +1,44 @@
+.chat-side {
+  float: left;
+  width: 300px;
+  .side-header {
+    background-color: #253141;
+    height: 100px;
+    padding: 0 20px;
+    .settings {
+      color: $white-color;
+      line-height: 100px;
+      width: 100%;
+      .settings__name {
+        float: left;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .settings__icon {
+        float: right;
+        .settings__icon__new {
+          @include icon();
+        }
+        .settings__icon__setting {
+          @include icon();
+        }
+      }
+    }
+  }
+  .groups {
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    overflow: scroll;
+    padding: 20px;
+    .group {
+      color: $white-color;
+      .group__name {
+        font-size: 15px;
+      }
+      .group__message {
+        font-size: 11px;
+        margin: 5px 0 40px 0;
+      }
+    }
+  }
+}
