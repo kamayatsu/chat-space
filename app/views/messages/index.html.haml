@@ -1,2 +1,123 @@
-%p
-  Hello, World!
+.flash-box
+  グループを作成しました
+.wrapper
+  .chat-side
+    .side-header
+      .settings
+        .settings__name
+          katsu
+        %ul.settings__icon
+          %li.settings__icon__new
+            %a{href: ""}
+              = fa_icon "edit"
+          %li.settings__icon__setting
+            %a{href: ""}
+              = fa_icon "cog"
+    .groups
+      %a{href: ""}
+        .group
+          .group__name
+            sample_group
+          .group__message
+            sample_text
+      %a{href: ""}
+        .group
+          .group__name
+            sample_group
+          .group__message
+            sample_text
+      %a{href: ""}
+        .group
+          .group__name
+            sample_group
+          .group__message
+            sample_text
+  .chat-main
+    .main-header
+      .title
+        .title__text
+          test
+        .title__user
+          Member：katsu
+      %form
+        %input.edit{type: "submit", value: "Edit"}
+    .messages
+      .message
+        .user
+          katsu
+        .day
+          2019/05/28(Tue) 19:00:00
+        .content
+          nice day
+      .message
+        .user
+          test
+        .day
+          2019/05/28(Tue) 19:30:00
+        .content
+          html
+      .message
+        .user
+          test
+        .day
+          2019/05/28(Tue) 19:30:00
+        .content
+          html
+      .message
+        .user
+          test
+        .day
+          2019/05/28(Tue) 19:30:00
+        .content
+          html
+      .message
+        .user
+          test
+        .day
+          2019/05/28(Tue) 19:30:00
+        .content
+          html
+      .message
+        .user
+          test
+        .day
+          2019/05/28(Tue) 19:30:00
+        .content
+          html
+      .message
+        .user
+          test
+        .day
+          2019/05/28(Tue) 19:30:00
+        .content
+          html
+      .message
+        .user
+          test
+        .day
+          2019/05/28(Tue) 19:30:00
+        .content
+          html
+      .message
+        .user
+          test
+        .day
+          2019/05/28(Tue) 19:30:00
+        .content
+          html
+      .message
+        .user
+          test
+        .day
+          2019/05/28(Tue) 19:30:00
+        .content
+          html
+    .form
+      %form
+        .input-box
+          %input{type: "text", placeholder: "type a message"}
+          %label.icon
+            = fa_icon "image"
+            %input{type: "file"}
+        %input{type: "submit", value: "Send"}
+        
