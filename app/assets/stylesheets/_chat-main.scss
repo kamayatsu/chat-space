@@ -32,7 +32,7 @@
   }
   .messages {
     background-color: #fafafa;
-    box-sizing: border-box;
+    display: block;
     height: calc(100vh - 190px);
     overflow: scroll;
     padding: 46px 40px;
