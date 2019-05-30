@@ -11,12 +11,12 @@
     .title {
       display: block;
       float: left;
-      .title__text {
+      &__text {
         color: #333333;
         font-size: 20px;
         margin: 35px 0 15px 0;
       }
-      .title__user {
+      &__user {
         bottom: 0;
         color: $gray-color;
         font-size: 12px;
@@ -37,18 +37,18 @@
     overflow: scroll;
     padding: 46px 40px;
     .message {
-      .message__user {
+      &__user {
         @include message($darkgray-color, 16px);
         float: left;
         font-weight: bold;
         margin-bottom: 10px;
       }
-      .message__day {
+      &__day {
         @include message($gray-color, 12px);
         float: left;
         margin-left: 10px;
       }
-      .message__content {
+      &__content {
         @include message($darkgray-color, 14px);
         clear: both;
         margin-bottom:40px;

@@ -9,17 +9,17 @@
       color: $white-color;
       line-height: 100px;
       width: 100%;
-      .settings__name {
+      &__name {
         float: left;
         font-size: 16px;
         font-weight: bold;
       }
-      .settings__icon {
+      &__icon {
         float: right;
-        .settings__icon__new {
+        &__new {
           @include icon();
         }
-        .settings__icon__setting {
+        &__setting {
           @include icon();
         }
       }
@@ -32,10 +32,10 @@
     padding: 20px;
     .group {
       color: $white-color;
-      .group__name {
+      &__name {
         font-size: 15px;
       }
-      .group__message {
+      &__message {
         font-size: 11px;
         margin: 5px 0 40px 0;
       }
