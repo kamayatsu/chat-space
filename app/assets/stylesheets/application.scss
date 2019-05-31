@@ -1,0 +1,31 @@
+/*
+ *= require font-awesome
+*/
+
+@import "./reset";
+@import "./variable";
+@import "./mixin";
+@import "./chat-side";
+@import "./chat-main";
+
+
+html, body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.flash-box {
+  background-color: $blue-color;
+  color: $white-color;
+  display: none;
+  height: 24px;
+  text-align: center;
+}
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+}

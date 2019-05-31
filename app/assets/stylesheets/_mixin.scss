@@ -1,0 +1,27 @@
+@mixin icon() {
+  display: inline;
+  .icon {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@mixin message($color, $font-size) {
+    color: $color;
+    font-size: $font-size;
+}
+
+@mixin button($color, $float, $height, $width) {
+  color: $color;
+  float: $float;
+  height: $height;
+  line-height: $height;
+  text-align: center;
+  width: $width;
+}
+
+@mixin form($height, $width) {
+  float: left;
+  height: $height;
+  width: $width;
+}

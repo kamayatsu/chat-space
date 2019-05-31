@@ -1,0 +1,123 @@
+.flash-box
+  グループを作成しました
+.wrapper
+  .chat-side
+    .side-header
+      .settings
+        .settings__name
+          katsu
+        %ul.settings__icon
+          %li.settings__icon__new
+            = link_to "#", class: "icon" do
+              = fa_icon "edit"
+          %li.settings__icon__setting
+            = link_to "#", class: "icon" do
+              = fa_icon "cog"
+    .groups
+      = link_to "#" do
+        .group
+          .group__name
+            sample_group
+          .group__message
+            sample_text
+      = link_to "#" do
+        .group
+          .group__name
+            sample_group
+          .group__message
+            sample_text
+      = link_to "#" do
+        .group
+          .group__name
+            sample_group
+          .group__message
+            sample_text
+  .chat-main
+    .main-header
+      .title
+        .title__text
+          test
+        .title__user
+          Member：katsu
+      %form
+        %input.edit{type: "submit", value: "Edit"}
+    .messages
+      .message
+        .message__user
+          katsu
+        .message__day
+          2019/05/28(Tue) 19:00:00
+        .message__content
+          nice day
+      .message
+        .message__user
+          test
+        .message__day
+          2019/05/28(Tue) 19:30:00
+        .message__content
+          html
+      .message
+        .message__user
+          test
+        .message__day
+          2019/05/28(Tue) 19:30:00
+        .message__content
+          html
+      .message
+        .message__user
+          test
+        .message__day
+          2019/05/28(Tue) 19:30:00
+        .message__content
+          html
+      .message
+        .message__user
+          test
+        .message__day
+          2019/05/28(Tue) 19:30:00
+        .message__content
+          html
+      .message
+        .message__user
+          test
+        .message__day
+          2019/05/28(Tue) 19:30:00
+        .message__content
+          html
+      .message
+        .message__user
+          test
+        .message__day
+          2019/05/28(Tue) 19:30:00
+        .message__content
+          html
+      .message
+        .message__user
+          test
+        .message__day
+          2019/05/28(Tue) 19:30:00
+        .message__content
+          html
+      .message
+        .message__user
+          test
+        .message__day
+          2019/05/28(Tue) 19:30:00
+        .message__content
+          html
+      .message
+        .message__user
+          test
+        .message__day
+          2019/05/28(Tue) 19:30:00
+        .message__content
+          html
+    .form
+      %form
+        .input-box
+          %input{type: "text", placeholder: "type a message"}
+          %label.icon
+            = fa_icon "image"
+            %input{type: "file"}
+        %input{type: "submit", value: "Send"}
+        
