@@ -1,17 +1,15 @@
-.flash-box
-  グループを作成しました
 .wrapper
   .chat-side
     .side-header
       .settings
         .settings__name
-          katsu
+          = current_user.name
         %ul.settings__icon
           %li.settings__icon__new
             = link_to "#", class: "icon" do
               = fa_icon "edit"
           %li.settings__icon__setting
-            = link_to "#", class: "icon" do
+            = link_to edit_user_path(current_user), class: "icon" do
               = fa_icon "cog"
     .groups
       = link_to "#" do
