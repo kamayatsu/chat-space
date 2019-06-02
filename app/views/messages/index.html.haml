@@ -6,7 +6,7 @@
         .title__text
           test
         .title__user
-          Member：katsu
+          = "Member：#{@name.join(" ")}"
       = link_to "Edit", new_group_path, class: "edit"
     .messages
       = render @messages
