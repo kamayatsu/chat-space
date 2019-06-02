@@ -20,6 +20,12 @@
         bottom: 0;
         color: $gray-color;
         font-size: 12px;
+        &__left {
+          float: left;
+        }
+        &__right {
+          float: left;
+        }
       }
     }
     .edit {

@@ -5,8 +5,12 @@
       .title
         .title__text
           test
-        .title__user
-          = "Member：#{@name.join(" ")}"
+        %ul.title__user
+          %li.title__user__left
+            Member：
+          %li.title__user__right
+            - @group.users.each do |user|
+              = user.name
       = link_to "Edit", new_group_path, class: "edit"
     .messages
       = render @messages
