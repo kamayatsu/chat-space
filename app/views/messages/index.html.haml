@@ -1,35 +1,5 @@
 .wrapper
-  .chat-side
-    .side-header
-      .settings
-        .settings__name
-          = current_user.name
-        %ul.settings__icon
-          %li.settings__icon__new
-            = link_to "#", class: "icon" do
-              = fa_icon "edit"
-          %li.settings__icon__setting
-            = link_to edit_user_path(current_user), class: "icon" do
-              = fa_icon "cog"
-    .groups
-      = link_to "#" do
-        .group
-          .group__name
-            sample_group
-          .group__message
-            sample_text
-      = link_to "#" do
-        .group
-          .group__name
-            sample_group
-          .group__message
-            sample_text
-      = link_to "#" do
-        .group
-          .group__name
-            sample_group
-          .group__message
-            sample_text
+  = render 'shared/chat-side'
   .chat-main
     .main-header
       .title
@@ -37,8 +7,7 @@
           test
         .title__user
           Member：katsu
-      %form
-        %input.edit{type: "submit", value: "Edit"}
+      = link_to "Edit", new_group_path, class: "edit"
     .messages
       .message
         .message__user
