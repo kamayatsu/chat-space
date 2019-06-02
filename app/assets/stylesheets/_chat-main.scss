@@ -52,7 +52,10 @@
       &__content {
         @include message($darkgray-color, 14px);
         clear: both;
-        margin-bottom:40px;
+        margin-bottom: 40px;
+        &__body {
+          margin-bottom: 5px;
+        }
       }
     }
   }
@@ -62,38 +65,38 @@
     height: 90px;
     position: fixed;
     width: calc(100vw - 300px);
-      form {
-        @include form(50px, calc(100% - 80px));
-        margin: 20px 40px 20px 40px;
-        .input-box {
-          @include form(50px, calc(100% - 115px));
-          background-color: $white-color; 
-          position: relative;
-          input[type="text"] {
-            @include form(50px, 100%);
-            border: none;
-            box-sizing: border-box;
-            color: $darkgray-color;
-            font-size: 16px;
-            padding: 0 40px 0 10px;
-          }
-          label {
-            position: absolute;
-            right: 10px;
-            top: 15px; 
-            i {
-              font-size: 20px;
-            }
-            input[type="file"] {
-              display: none;
-            }
-          }
+    form {
+      @include form(50px, calc(100% - 80px));
+      margin: 20px 40px 20px 40px;
+      .input-box {
+        @include form(50px, calc(100% - 115px));
+        background-color: $white-color;
+        position: relative;
+        .body {
+          @include form(50px, 100%);
+          border: none;
+          box-sizing: border-box;
+          color: $darkgray-color;
+          font-size: 16px;
+          padding: 0 40px 0 10px;
         }
-        input[type="submit"] {
-          @include button($white-color, left, 50px, 100px);
-          background-color: $blue-color;
-          margin-left: 15px;
+        .label {
+          position: absolute;
+          right: 10px;
+          top: 15px;
+          i {
+            font-size: 20px;
+          }
+          .image {
+            display: none;
+          }
         }
       }
+      .send {
+        @include button($white-color, left, 50px, 100px);
+        background-color: $blue-color;
+        margin-left: 15px;
+      }
+    }
   }
 }

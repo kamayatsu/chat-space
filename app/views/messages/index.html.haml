@@ -1,3 +1,21 @@
 .wrapper
   = render 'shared/chat-side'
-  = render 'shared/chat-main'
+  .chat-main
+    .main-header
+      .title
+        .title__text
+          test
+        .title__user
+          Member：katsu
+      = link_to "Edit", new_group_path, class: "edit"
+    .messages
+      = render @messages
+    .form
+      = form_for [@group, @message] do |f|
+        .input-box
+          = f.text_field :body, placeholder: "type a message", class: "body"
+          = f.label :image, class: "label" do
+            = fa_icon "image"
+            = f.file_field :image, class: "image"
+        = f.submit "Send", class: "send"
+
