@@ -11,7 +11,7 @@
           %li.title__user__right
             - @group.users.each do |user|
               = user.name
-      = link_to "Edit", new_group_path, class: "edit"
+      = link_to "Edit", edit_group_path(@group), class: "edit"
     .messages
       = render @messages
     .form
