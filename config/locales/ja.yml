@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    errors:
+      models:
+        message:
+          attributes:
+            body:
+              blank: "を入力してください"
+            group:
+              required: "を入力してください"
+            user:
+              required: "を入力してください"
