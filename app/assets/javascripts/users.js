@@ -34,20 +34,20 @@ $(document).on('turbolinks:load', function () {
       .done(function (users) {
         $(searchList).empty();
         //現在チャットメンバー欄にいる人の情報を格納するための配列を用意
-        var already_exists = [];
-        //already_existsに既存チャットメンバーを追加
+        var chat_members = [];
+        //chat_membersに既存チャットメンバーを追加
         var targets = document.getElementsByClassName('targetclass');
         for (i = 0; i < targets.length; i++) {
           var member = { id: $(targets[i]).val() }
-          already_exists.push(member);
+          chat_members.push(member);
         }
         //入力文字数が0か否かで分岐
         if (users.length !== 0) {
           users.forEach(function (user) {
-            //someメソッドでalready_existsが既存チャットメンバーを含んでいるか確認し、判定結果を変数someに格納
-            var some = already_exists.some(a => a.id === `${user.id}`);
-            //someメソッドの結果、現在のチャットメンバーを含んでいなければ候補欄に追加
-            if (!some) {
+            //someメソッドでchat_membersが既存チャットメンバーを含んでいるか確認し、判定結果を変数member_include_checkに格納
+            var member_include_check = chat_members.some(c => c.id === `${user.id}`);
+            //member_include_checkの結果、現在のチャットメンバーを含んでいなければ候補欄に追加
+            if (!member_include_check) {
               appendUser(user);
             }
           });
