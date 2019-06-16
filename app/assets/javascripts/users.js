@@ -12,9 +12,9 @@ $(document).on('turbolinks:load', function () {
     searchList.append(html);
   }
 
-  function appendErrMsgToHTML(msg) {
+  function appendErrMsgToHTML() {
     var html = `<div class="chat-group-user clearfix">
-                  <p class="chat-group-user__name">${msg}</p>
+                  <p class="chat-group-user__name">一致するユーザが見つかりません</p>
                 </div>`
     searchList.append(html);
   }
@@ -53,11 +53,11 @@ $(document).on('turbolinks:load', function () {
           });
           //上記の処理の結果、検索結果に何も表示されなければ実施
           if (!($('.user-search-add').text() == '追加')) {
-            appendErrMsgToHTML('一致するユーザが見つかりません');
+            appendErrMsgToHTML();
           }
         }
         else {
-          appendErrMsgToHTML('一致するユーザが見つかりません');
+          appendErrMsgToHTML();
         }
       })
       .fail(function () {
