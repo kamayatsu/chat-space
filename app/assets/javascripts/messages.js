@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function () {
   function buildHTML(message) {
     var body = message.body ? `${message.body}` : "";
     var image = message.image ? `${message.image}` : "";
-    var html = `<div class="message">
+    var html = `<div class="message" data-id="${message.id}">
                   <div class="message__user">
                     ${message.user_name}
                   </div>
@@ -25,6 +25,23 @@ $(document).on('turbolinks:load', function () {
     var position = $('.messages')[0].scrollHeight;
     var speed = 1000;
     $('.messages').animate({ scrollTop: position }, speed, 'swing');
+  }
+
+  var reloadMessages = function () {
+    //カスタムデータ属性のIDを取得
+    last_message_id = $('.message:last').data('id');
+    $.ajax({
+      url: '/api/messages',
+      type: 'GET',
+      dataType: 'json',
+      data: { id: last_message_id }
+    })
+      .done(function (messages) {
+        console.log('success');
+      })
+      .fail(function () {
+        console.log('error');
+      })
   }
 
   $('.new_message').on('submit', function (e) {
