@@ -28,20 +28,25 @@ $(document).on('turbolinks:load', function () {
   }
 
   function reloadMessages() {
-    //カスタムデータ属性のIDを取得
-    last_message_id = $('.message:last').data('id');
-    $.ajax({
-      url: '/api/messages',
-      type: 'GET',
-      dataType: 'json',
-      data: { id: last_message_id }
-    })
-      .done(function (messages) {
-        console.log('success');
+    if (location.pathname.match(/\/groups\/\d+\/messages/)) {
+      var last_message_id = $('.message:last').data('id');
+      $.ajax({
+        url: 'api/messages',
+        type: 'GET',
+        data: { id: last_message_id },
+        dataType: 'json',
       })
-      .fail(function () {
-        console.log('error');
-      })
+        .done(function (messages) {
+          messages.forEach(function (message) {
+            var insertHTML = buildHTML(message);
+            $('.messages').append(insertHTML);
+            scrollBottom();
+          });
+        })
+        .fail(function () {
+          alert("自動更新に失敗しました");
+        })
+    }
   }
 
   $('.new_message').on('submit', function (e) {
@@ -72,4 +77,6 @@ $(document).on('turbolinks:load', function () {
         });
       })
   });
+
+  setInterval(reloadMessages, 5000);
 });
