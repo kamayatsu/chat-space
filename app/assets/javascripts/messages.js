@@ -27,7 +27,7 @@ $(document).on('turbolinks:load', function () {
     $('.messages').animate({ scrollTop: position }, speed, 'swing');
   }
 
-  var reloadMessages = function () {
+  function reloadMessages() {
     //カスタムデータ属性のIDを取得
     last_message_id = $('.message:last').data('id');
     $.ajax({
