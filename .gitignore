@@ -18,3 +18,6 @@
 
 # Ignore image
 public/uploads/*
+
+# Ignore secrets.yml
+config/secrets.yml
