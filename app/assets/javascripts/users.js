@@ -26,11 +26,13 @@ $(document).on('turbolinks:load', function () {
     var data = (input.length !== 0) ? input : false;
 
     $.ajax({
-      url: '/users',
-      type: 'GET',
-      data: { keyword: data },
-      dataType: 'json'
-    })
+        url: '/users',
+        type: 'GET',
+        data: {
+          keyword: data
+        },
+        dataType: 'json'
+      })
       .done(function (users) {
         $(searchList).empty();
         //現在チャットメンバー欄にいる人の情報を格納するための配列を用意
@@ -38,7 +40,9 @@ $(document).on('turbolinks:load', function () {
         //chat_membersに既存チャットメンバーを追加
         var targets = document.getElementsByClassName('targetclass');
         for (i = 0; i < targets.length; i++) {
-          var member = { id: $(targets[i]).val() }
+          var member = {
+            id: $(targets[i]).val()
+          }
           chat_members.push(member);
         }
         //入力文字数が0か否かで分岐
@@ -55,8 +59,7 @@ $(document).on('turbolinks:load', function () {
           if (!($('.user-search-add').text() == '追加')) {
             appendErrMsgToHTML();
           }
-        }
-        else {
+        } else {
           appendErrMsgToHTML();
         }
       })
@@ -83,7 +86,10 @@ $(function () {
   $(document).on('click', '.chat-group-user__btn--add', function () {
     var user_id = $(this).data('user-id');
     var user_name = $(this).data('user-name');
-    var user = { id: user_id, name: user_name }
+    var user = {
+      id: user_id,
+      name: user_name
+    }
     $(this).parent().remove();
     appendUserToGroup(user);
   });
